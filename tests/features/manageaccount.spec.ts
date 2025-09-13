@@ -13,12 +13,12 @@ test.describe(
   {
     annotation: {
       type: "MODULE",
-      description: "Functional testing for manage account",
+      description: "Functional testing for manage account, found possible bug: https://github.com/jegspace/tripinas/issues/1#issue-3412633844",
     },
     tag: "@ManageAccount",
   },
   () => {
-    const authUser = users[0];
+    const authUser = users[2];
     let dashboardPage: DashboardPage;
     let manageAccountPage: ManageAccountPage;
 
@@ -36,6 +36,7 @@ test.describe(
 
       // Open Manage Account dialog
       await dashboardPage.openUserMenu();
+      await dashboardPage.manageAccountItem.waitFor({ state: 'visible' }); 
       await dashboardPage.manageAccountItem.click();
 
       manageAccountPage = new ManageAccountPage(page);

@@ -54,8 +54,9 @@ export class DashboardPage {
   }
 
   async openUserMenu(): Promise<void> {
-    await this.openUserButton.click();
-    await expect(this.userPopover).toBeVisible();
+  await this.page.getByRole('button', { name: 'Open user button' }).click();
+  // Wait for the menu to appear
+  await this.page.getByRole('menuitem', { name: 'Manage account' }).waitFor({ state: 'visible' });
   }
 
   async verifyUserMenu(fullName: string, username: string): Promise<void> {
