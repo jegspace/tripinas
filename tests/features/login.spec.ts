@@ -20,7 +20,7 @@ test.describe(
     });
 
     users.forEach((user) => {
-      // ✅ Successful login + logout
+      // Successful login + logout
       test(
         `should login as ${user.username} and verify profile`,
         { tag: ["@Login", "@SmokeTesting", "@HappyPath"] },
@@ -40,14 +40,14 @@ test.describe(
           await page.getByRole("menuitem", { name: "Sign out" }).click();
           await expect(page).toHaveURL("/sign-in");
 
-          // ✅ Attach screenshot to report
+          // Attach screenshot to report
           await test.step("Take and attach screenshot", async () => {
             await attachScreenshot(page, testInfo, LOGIN_SUCCESS_SCREENSHOT);
           });
         }
       );
 
-      // ✅ Invalid password
+      // Invalid password
       test(
         `should fail login with invalid password for ${user.username}`,
         { tag: ["@Login", "@NegativeTesting", "@InvalidPassword"] },
@@ -60,14 +60,14 @@ test.describe(
           await expect(page.getByText("Password is incorrect. Try")).toBeVisible();
           await expect(page.locator("#error-password")).toContainText("Password is incorrect. Try");
 
-          // ✅ Attach screenshot to report
+          // Attach screenshot to report
           await test.step("Take and attach screenshot", async () => {
             await attachScreenshot(page, testInfo, LOGIN_FAILURE_SCREENSHOT);
           });
         }
       );
 
-      // ✅ Invalid username/email
+      // Invalid username/email
       test(
         `should fail login with invalid username/email for ${user.username}`,
         { tag: ["@Login", "@NegativeTesting", "@InvalidUsername"] },
@@ -83,7 +83,7 @@ test.describe(
         }
       );
 
-      // ✅ Empty username/email
+      // Empty username/email
       test(
         `should fail login with empty username/email for ${user.username}`,
         { tag: ["@Login", "@NegativeTesting", "@EmptyUsername"] },
@@ -101,7 +101,7 @@ test.describe(
         }
       );
 
-      // ✅ Empty password
+      // Empty password
       test(
         `should fail login with empty password for ${user.username}`,
         { tag: ["@Login", "@NegativeTesting", "@EmptyPassword"] },

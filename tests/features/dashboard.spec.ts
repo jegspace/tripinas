@@ -7,12 +7,12 @@ const DASHBOARD_SCREENSHOT = "dashboard_verification_screenshot";
 
 test.describe("Dashboard Test Suite", { tag: ["@RegressionTesting", "@SmokeTesting", "@Dashboard"] }, () => {
   let dashboardPage: DashboardPage;
-  const authUser = users[0]; // ✅ single user
+  const authUser = users[0]; 
 
   test.beforeEach(async ({ page }) => {
     dashboardPage = new DashboardPage(page);
 
-    // --- Login ---
+    // Login 
     await page.goto("http://localhost:5173/sign-in");
     await page.getByRole("textbox", { name: "Email address or username" }).fill(authUser.email);
     await page.getByRole("textbox", { name: "Password" }).fill(authUser.password);
