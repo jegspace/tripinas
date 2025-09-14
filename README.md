@@ -35,7 +35,7 @@ A modern **Playwright test automation framework** integrating:
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/regie2197/tripinas.git
+git clone https://github.com/jegspace/tripinas.git
 cd tripinas
 
 # Install root deps
@@ -118,7 +118,7 @@ npm run performance-test-ui
 ---
 
 ## 🌍 Environment Configuration
-Add environment variables in **`frontend/.env.local`**:  
+Add environment variables in **`.env.local`**:  
 
 ```bash
 TEST_EMAIL=your_test_email@example.com
@@ -165,6 +165,16 @@ npm run login-test
 Custom configs in:  
 - `lighthouse.config.json`  
 - `lighthouse.config.yml`  
+
+Prerequisites for Integrating lighthouse to PW
+
+Run: 
+
+```bash
+npm i chrome-launcher
+npm i js-yaml
+npm i lighthouse
+```
 
 Run:  
 ```bash

@@ -43,7 +43,7 @@ test.describe(
       await manageAccountPage.verifyManageAccountDialog();
     });
 
-    // Test 1: Update first/last name
+    // ✅ Test 1: Update first/last name
     test(
       "Should update first and last name",
       { tag: ["@ManageAccount", "@ProfileUpdate"] },
@@ -56,7 +56,7 @@ test.describe(
       }
     );
 
-    // Test 2: Upload profile photo
+    // ✅ Test 2: Upload profile photo
     test(
       "Should upload profile photo",
       { tag: ["@ManageAccount", "@UploadPhoto"] },
@@ -69,7 +69,7 @@ test.describe(
       }
     );
 
-    // Test 3: Remove profile photo
+    // ✅ Test 3: Remove profile photo
     test(
       "Should remove profile photo",
       { tag: ["@ManageAccount", "@RemovePhoto"] },
