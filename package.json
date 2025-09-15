@@ -24,15 +24,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/regie2197/tripinas.git"
+    "url": "git+https://github.com/jegspace/tripinas.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/regie2197/tripinas/issues"
+    "url": "https://github.com/jegspace/tripinas/issues"
   },
-  "homepage": "https://github.com/regie2197/tripinas#readme",
+  "homepage": "https://github.com/jegspace/tripinas#readme",
   "workspaces": [
     "frontend",
     "backend"
